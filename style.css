@@ -383,3 +383,112 @@ footer > div {
     height: 30%;
     background-color: rgb(54, 54, 54);
 }
+
+
+
+/*IZVODJACI*/
+
+.sekcijaIzvodjaca > h2 {
+    text-align: center;
+}
+
+.izvodjaci {
+    gap: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.izvodjaci > a > div > img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 180px;
+}
+
+.izvodjaci > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.izvodjaci > a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    align-self: center;
+    justify-self: center;
+}
+
+.izvodjaci > a:hover {
+    color: rgb(197, 218, 17);
+}
+
+
+
+/*STRANICA ZA IZVODJACE*/
+
+.sekcijaMuzicarima > img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 71%, 0 100%);
+}
+
+.sekcijaMuzicarima > div {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.opisMuzicara {
+    width: 50%;
+}
+
+.opisMuzicara > h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 3.5vw;
+}
+
+.osnovniPodaci {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.bukiranjeDugme {
+    text-decoration: none;
+    color: rgb(197, 218, 17);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.osnovniPodaci > p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    margin: 0;
+}
+
+.osnovniPodaci > p > span {
+    margin-right: 5px;
+}
+
+.muzicareveDrustveneMreze {
+    display: flex;
+    flex-direction: column;
+    justify-content: unsafe;
+    align-items: center;
+}
+
+.muzicareveDrustveneMreze > a {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
