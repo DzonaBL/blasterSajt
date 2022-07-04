@@ -9,6 +9,7 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    letter-spacing: 2px;
 }
 
 p {
@@ -71,10 +72,11 @@ header {
 /*HOME PAGE*/
 
 .homePage {
-    background-image: url(https://media.giphy.com/media/ilqP03ohzeIJZGnnpe/giphy.gif);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('ARMATURAA.gif');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-blend-mode: darken;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -140,7 +142,7 @@ header {
     margin-left: 25px;
     margin-right: 25px;
     /*height: 70vh;*/
-    width: 600px;
+    max-width: 600px;
     color: rgb(231, 231, 231);
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(54, 54, 54);
@@ -186,6 +188,11 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.oNamaUkratko > h2 {
+    letter-spacing: 8px;
+    font-size: 40px;
 }
 
 .oNamaUkratko > p {
@@ -491,4 +498,99 @@ footer > div {
     text-decoration: underline;
     margin-top: 7px;
     margin-bottom: 7px;
+}
+
+
+
+
+
+/*STRANICA ZA DOGADJAJE*/
+
+.sekcijaZaDogadjaje > div {
+    margin-top: 120px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sekcijaZaDogadjaje > div > img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+}
+
+.sekcijaZaDogadjaje > div > div {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sekcijaZaDogadjaje > div > div > p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.sekcijaZaDogadjaje > div > div > p > span {
+    margin-right: 5px;
+}
+
+
+/*O NAMA*/
+
+.sekcijaInfa {
+    /*background-image: url(pozadinaONama.jpg);*/
+}
+
+.sekcijaInfa > div {
+    margin-top: 120px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.onamaDiv {
+    max-width: 50%;
+}
+
+.kontaktDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drustveneMrezeONama {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kontaktDiv > p:first-of-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.kontaktDiv > p:first-of-type > span {
+    margin-right: 5px;
+}
+
+.kontaktDiv > p:first-of-type > a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.drustveneMrezeONama > a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
