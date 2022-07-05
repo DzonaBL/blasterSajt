@@ -56,23 +56,104 @@ header {
     width: max-content;
 }
 
-.ostatakHedera > div {
+.ostatakHedera > div:first-of-type {
     display: flex;
     flex-direction: row;
 }
 
-.ostatakHedera > div > a {
+.ostatakHedera > div:first-of-type > a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     margin-left: 20px;
 }
 
 
+/*HAMBURGER MENI*/
+
+.navmenu {
+    /*position: fixed;
+    top: 0;
+    right: 0;*/
+    z-index: 1030;
+    font-family: 'Montserrat', sans-serif;
+    display: none;
+}
+
+.navmenu > input {
+    display: none;
+}
+
+.hamburgerovMeni {
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1023;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.hamburgerovMeni > a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+}
+
+.navmenu > input:checked ~ .hamburgerovMeni {
+    visibility: visible;
+}
+
+.navmenu > label {
+    z-index: 1024;
+    appearance: push-button;
+    -moz-appearance: button;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    
+}
+
+.navmenu > label > * {
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    left: 15px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .navmenu label > *:first-child {
+    top: 15px;
+  }
+  .navmenu label > *:nth-child(2) {
+    top: 30px;
+  }
+  .navmenu label > *:last-child {
+    bottom: 15px;
+}
+
+@media only screen and (max-width: 540px) {
+    .ostatakHedera > div:first-of-type {
+        display: none;
+    }
+    .navmenu {
+        display: initial;
+    }
+}
+
 
 /*HOME PAGE*/
 
 .homePage {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('ARMATURAA.gif');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('pozadinaONama.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -83,28 +164,61 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
+    position: relative;
 }
 
-.homePage > img {
+.homePage > video {
+    
+    pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.sadrzajNaslovne {
+    background: linear-gradient( rgba(0, 0, 0, 0.5) , rgba(0, 0, 0, 0.5));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.sadrzajNaslovne > img {
     filter: brightness(100);
     width: 180px;
 }
 
-.homePage > h1 {
+.sadrzajNaslovne > h1 {
+    text-align: center;
+    margin-top: 0;
     margin-bottom: 50px;
     font-family: 'Montserrat', sans-serif;
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 600;
     color: rgb(231, 231, 231)
 }
 
-.homePage > div > a {
+.sadrzajNaslovne > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sadrzajNaslovne > div > a {
     margin-left: 20px;
     margin-right: 20px;
     text-decoration: none;
 }
 
-.homePage > div > a > span {
+.sadrzajNaslovne > div > a > span {
     border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
@@ -113,12 +227,22 @@ header {
     color: rgb(231, 231, 231);
 }
 
+@media only screen and (max-width: 240px) {
+    .sadrzajNaslovne > div {
+        flex-direction: column;
+    }
+    .sadrzajNaslovne > div > a:nth-of-type(2) {
+        margin-top: 20px;
+    }
+}
+
+
 /*NADOLAZECE ZURKE*/
 .nadolazeciDogadjaji {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -130,7 +254,7 @@ header {
 }
 
 .zurkeKarticeKratke {
-    max-height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -174,13 +298,25 @@ header {
 }
 
 
+@media only screen and (max-width: 540px) {
+    .zurkeKarticeKratke {
+        flex-direction: column;
+    }
+    .zurkaKarticaKratka {
+        margin-top: 10px;
+    }
+    .zurkeKarticeKratke > .zurkaKarticaKratka:last-of-type {
+        margin-bottom: 30px;
+    }
+}
+
 
 /*O NAMA UKRATKO*/
 .oNamaUkratko {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     width: 100vw;
-    height: 40vh;
+    min-height: 40vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -199,6 +335,12 @@ header {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media only screen and (max-width: 240px) {
+    .oNamaUkratko > h2 {
+        font-size: 10vw;
+    }
 }
 
 
@@ -229,6 +371,13 @@ footer > div {
     flex-direction: column;
 }
 
+@media only screen and (max-width: 540px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 /*DOGADJAJI*/
 
 .sekcijaOdDogadjaja {
@@ -245,71 +394,24 @@ footer > div {
     
 }
 
-.zurkaKarticaDuga {
-    /*transition: transform .5s;*/
-    overflow: hidden;
-    position: relative;
-    margin-top: 35px;
-    margin-bottom: 35px;
+.listanjeDogadjaja {
+    margin-bottom: 30px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    height: 30vh;
-    background-color: rgb(54, 54, 54);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
-/*.zurkaKarticaDuga:hover {
-    transform: scale(1.2);
-}*/
-
-.zurkaKarticaDuga > img {
-    pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.zurkaKarticaDuga > div {
-    max-width: 1200px;
-    height: 30vh;
-    display: flex;
-    flex-direction: row;
-}
-
-.zurkaKarticaDuga > div > img {
-    width: 40%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    backdrop-filter: blur(7px);
-}
-
-.zurkaKarticaDuga > div > div {
-    backdrop-filter: blur(7px);
-    padding: 15px;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.103);
-}
-
-.zurkaKarticaDuga > div > div > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.zurkaKarticaDuga > div > div > div > h3 {
-    margin-top: 2px;
-    font-weight: 600;
-}
-
-.datumVrijemeDugi {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.datumVrijemeDugi > p {
+.listanjeDogadjaja > .zurkaKarticaKratka {
     margin: 0;
+}
+
+@media only screen and (max-width: 540px) {
+    .listanjeDogadjaja {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 
@@ -391,6 +493,16 @@ footer > div {
     background-color: rgb(54, 54, 54);
 }
 
+@media only screen and (max-width: 810px) {
+    .podkestiKartice {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 540px) {
+    .podkestiKartice {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
 
 /*IZVODJACI*/
@@ -415,9 +527,10 @@ footer > div {
     border-radius: 180px;
 }
 
-.izvodjaci > div {
+.izvodjaci > a > div {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .izvodjaci > a {
@@ -431,6 +544,16 @@ footer > div {
     color: rgb(197, 218, 17);
 }
 
+@media only screen and (max-width: 810px) {
+    .izvodjaci {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 540px) {
+    .izvodjaci {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
 
 /*STRANICA ZA IZVODJACE*/
@@ -500,7 +623,28 @@ footer > div {
     margin-bottom: 7px;
 }
 
+@media only screen and (max-width: 540px) {
+    .sekcijaMuzicarima > div {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .opisMuzicara > h2 {
+        font-size: 7vw;
+    }
+    .osnovniPodaci {
+        align-items: center;
+    }
+    .sekcijaMuzicarima > div > hr {
+        visibility: hidden;
+    }
+    .osnovniPodaci > hr {
+        visibility: hidden;
+    }
+    .opisMuzicara {
+        width: 90%;
+    }
 
+}
 
 
 
@@ -593,4 +737,77 @@ footer > div {
     font-family: 'Montserrat', sans-serif;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 540px) {
+    .sekcijaInfa > div {
+        flex-direction: column-reverse;
+
+    }
+    .onamaDiv {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .onamaDiv > h2 {
+        text-align: center;
+    }
+}
+
+
+/*SARADNJA*/
+
+.sekcijaSaradnje {
+    margin-top: 120px;
+}
+
+.sekcijaSaradnje > div {
+    text-align: center;
+}
+
+.accordion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vw;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:nth-of-type(1) {
+    background-color: red;
+}
+
+.accordion:nth-of-type(2) {
+    background-color: blue;
+}
+
+.accordion:nth-of-type(3) {
+    background-color: green;
+}
+
+.accordion:nth-of-type(4) {
+    background-color: purple;
+}
+
+.accordion:nth-of-type(5) {
+    background-color: cyan;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+
+.panel > p {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
