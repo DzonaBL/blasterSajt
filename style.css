@@ -683,10 +683,6 @@ footer > div {
 
 /*O NAMA*/
 
-.sekcijaInfa {
-    /*background-image: url(pozadinaONama.jpg);*/
-}
-
 .sekcijaInfa > div {
     margin-top: 120px;
     max-width: 1200px;
@@ -832,4 +828,30 @@ footer > div {
     text-decoration: none;
     color: rgb(197, 218, 17);
 
+}
+
+/*KOD APLOUDA*/
+
+.aploudSekcija {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aploudSekcija > form {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aploudSekcija > form > * {
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
