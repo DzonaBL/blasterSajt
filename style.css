@@ -811,3 +811,25 @@ footer > div {
     margin-right: auto;
     text-align: left;
 }
+
+/*404*/
+
+.cetvorkaSekcija {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.cetvorkaSekcija > h2 {
+    margin-bottom: 0;
+}
+
+.cetvorkaSekcija > a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: rgb(197, 218, 17);
+
+}
