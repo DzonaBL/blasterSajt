@@ -44,75 +44,47 @@
         <br><br><br><br>
         <h2>Сљедећи догађаји</h2>
         <div class="listanjeDogadjaja">
-            <a href="/dogadjaji_stranica" class="zurkaKarticaKratka">
-                <img src="slikaSaArmature.jpg" alt="eventSlika">
-                <div class="zurkaKarticaInfoKratka">
-                    <div>
-                        <p>15. Јул</p>
-                        <p>Тајна локација 🤫</p>
-                    </div>
-                    <h3>АРМАТУРА: 160+ издање</h5>
-                    <p>На узбудљивој локацији уживаћемо у брзим тракама са нашим најбољим ДЈ-евима</p>
-                </div>
-        </a>
-        <a href="/dogadjaji_stranica" class="zurkaKarticaKratka">
-            <img src="slikaSaArmature.jpg" alt="eventSlika">
-            <div class="zurkaKarticaInfoKratka">
-                <div>
-                    <p>15. Јул</p>
-                    <p>Тајна локација 🤫</p>
-                </div>
-                <h3>АРМАТУРА: 160+ издање</h5>
-                <p>На узбудљивој локацији уживаћемо у брзим тракама са нашим најбољим ДЈ-евима</p>
-            </div>
-    </a>
-    <a href="/dogadjaji_stranica" class="zurkaKarticaKratka">
-        <img src="slikaSaArmature.jpg" alt="eventSlika">
+        <% if(data.length > 0){ %>
+            <% for(let d of data){ %> 
+
+            <a href="/dogadjaji/<%= d.id %>" class="zurkaKarticaKratka">
+        <img src="<%= d.slika %>" alt="eventSlika">
+        <input type="hidden" value="<%= d.id %>" name="id">
         <div class="zurkaKarticaInfoKratka">
             <div>
-                <p>15. Јул</p>
-                <p>Тајна локација 🤫</p>
+                <p><%= d.vrijeme %></p>
+                <p><%= d.lokacija %></p>
             </div>
-            <h3>АРМАТУРА: 160+ издање</h5>
-            <p>На узбудљивој локацији уживаћемо у брзим тракама са нашим најбољим ДЈ-евима</p>
+            <h3><%= d.naslov %></h5>
+            <p><%= d.opis %></p>
         </div>
 </a>
+        <% } %>
+        <% }else{ %>
+            <h2>Nema buducih dogadjaja</h2>
+         <% } %>   
         </div>
         <h2>Прошли догађаји</h2>
         <div class="listanjeDogadjaja">
-            <a href="/dogadjaji_stranica" class="zurkaKarticaKratka">
-                <img src="slikaSaArmature.jpg" alt="eventSlika">
-                <div class="zurkaKarticaInfoKratka">
-                    <div>
-                        <p>15. Јул</p>
-                        <p>Тајна локација 🤫</p>
-                    </div>
-                    <h3>АРМАТУРА: 160+ издање</h5>
-                    <p>На узбудљивој локацији уживаћемо у брзим тракама са нашим најбољим ДЈ-евима</p>
-                </div>
-        </a>
-        <a href="/dogadjaji_stranica" class="zurkaKarticaKratka">
-            <img src="slikaSaArmature.jpg" alt="eventSlika">
+            <% if(data.length > 0){ %>
+                <% for(let d of data){ %> 
+    
+                <a href="/dogadjaji/<%= d.id %>" class="zurkaKarticaKratka">
+            <img src="<%= d.slika %>" alt="eventSlika">
+            <input type="hidden" value="<%= d.id %>" name="id">
             <div class="zurkaKarticaInfoKratka">
                 <div>
-                    <p>15. Јул</p>
-                    <p>Тајна локација 🤫</p>
+                    <p><%= d.vrijeme %></p>
+                    <p><%= d.lokacija %></p>
                 </div>
-                <h3>АРМАТУРА: 160+ издање</h5>
-                <p>На узбудљивој локацији уживаћемо у брзим тракама са нашим најбољим ДЈ-евима</p>
+                <h3><%= d.naslov %></h5>
+                <p><%= d.opis %></p>
             </div>
     </a>
-    <a href="/dogadjaji_stranica" class="zurkaKarticaKratka">
-        <img src="slikaSaArmature.jpg" alt="eventSlika">
-        <div class="zurkaKarticaInfoKratka">
-            <div>
-                <p>15. Јул</p>
-                <p>Тајна локација 🤫</p>
-            </div>
-            <h3>АРМАТУРА: 160+ издање</h5>
-            <p>На узбудљивој локацији уживаћемо у брзим тракама са нашим најбољим ДЈ-евима</p>
-        </div>
-</a>
+            <% } %>
+            <% }else{ %>
+                <h2>Nema proslih dogadjaja</h2>
+             <% } %>   
         </div>
     </section>
 

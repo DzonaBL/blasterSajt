@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,600;0,700;0,900;1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,300,0,0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Event name</title>
     </head>
 <body>
     <header id="heder">
         <div class="ostatakHedera">
-            <a href="/"><img src="blasterLogo/Blaster-Logo-Favicon.png" alt="logo"></a>
+            <a href="/"><img src="/blasterLogo/Blaster-Logo-Favicon.png" alt="logo"></a>
         <div>
              <a href="/dogadjaji">Догађаји</a>
                 <a href="/izvodjaci">Извођачи</a>
@@ -42,17 +42,17 @@
 
     <section class="sekcijaZaDogadjaje">
         <div>
-            <img src="slikaSaArmature.jpg" alt="eventSlika">
+            <img src="/<%= data.slika %>" alt="eventSlika">
             <div>
                 <p><span class="material-symbols-sharp">
                     pin_drop
-                    </span> Дом омладине, Бањалука</p>
+                    </span> <%= data.lokacija %></p>
                 <p><span class="material-symbols-sharp">
                     schedule
-                    </span> 16. Април</p>
+                    </span> <%= data.vrijeme %></p>
             </div>
-            <h2>Арматура</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolorum, iusto similique debitis modi culpa hic accusamus? Sequi ex iste cumque itaque! Harum placeat odit quam? Sit veniam eos voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur recusandae reprehenderit ducimus modi minima! Consequatur, in impedit commodi ducimus nihil sapiente cupiditate beatae aliquid magnam amet ea eligendi consectetur? Nostrum!</p>
+            <h2><%= data.naslov %></h2>
+           <p><%= data.tekst %></p>
         </div>
     </section>
 
@@ -81,4 +81,4 @@
 </body>
 </html>
 
-<script src="js/zatamniSkrolom.js"></script>
+<script src="/js/zatamniSkrolom.js"></script>

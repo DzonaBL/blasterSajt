@@ -21,6 +21,10 @@ const Autor = sequelize.define("autor", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  mjesto: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
   biografija: {
     type: Sequelize.STRING,
     allowNull: false,

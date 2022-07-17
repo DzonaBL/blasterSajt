@@ -44,106 +44,28 @@
     <section class="stranicaPodkesta">
         <br><br><br><br>
         <h2>Подкести</h2>
-            <div class="podkestiKartice">
-                <a href="#">
+        <div class="podkestiKartice">
+            <% if (data.length > 0){ %>    
+                <% for(let d of data){ %> 
+                <a href="<%= d.link %>">
                 <div class="podkestKartica">
-                    <img src="daVinci.jpg" alt="brko">
+                    <img src="/<%= d.slika %>" alt="brko">
                     <div>
                         <div class="podkestKarticaPlejSlika"><span class="material-symbols-sharp">
                             play_circle
                             </span></div>
                         <div class="podkestKarticaInfo">
-                            <h3>DaVinci session @ Vrucica, Banjaluka</h3>
-                            <p>Blaster podcast #1</p>
+                            <h3><%= d.naslov %></h3>
+                            <p>Blaster podcast #<%= d.id %></p>
                         </div>
                     </div>
                 </div>
             </a>
-            <a href="#">
-                <div class="podkestKartica">
-                    <img src="daVinci.jpg" alt="brko">
-                    <div>
-                        <div class="podkestKarticaPlejSlika"><span class="material-symbols-sharp">
-                            play_circle
-                            </span></div>
-                        <div class="podkestKarticaInfo">
-                            <h3>DaVinci session @ Vrucica, Banjaluka</h3>
-                            <p>Blaster podcast #1</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="podkestKartica">
-                    <img src="daVinci.jpg" alt="brko">
-                    <div>
-                        <div class="podkestKarticaPlejSlika"><span class="material-symbols-sharp">
-                            play_circle
-                            </span></div>
-                        <div class="podkestKarticaInfo">
-                            <h3>DaVinci session @ Vrucica, Banjaluka</h3>
-                            <p>Blaster podcast #1</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="podkestKartica">
-                    <img src="daVinci.jpg" alt="brko">
-                    <div>
-                        <div class="podkestKarticaPlejSlika"><span class="material-symbols-sharp">
-                            play_circle
-                            </span></div>
-                        <div class="podkestKarticaInfo">
-                            <h3>DaVinci session @ Vrucica, Banjaluka</h3>
-                            <p>Blaster podcast #1</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="podkestKartica">
-                    <img src="daVinci.jpg" alt="brko">
-                    <div>
-                        <div class="podkestKarticaPlejSlika"><span class="material-symbols-sharp">
-                            play_circle
-                            </span></div>
-                        <div class="podkestKarticaInfo">
-                            <h3>DaVinci session @ Vrucica, Banjaluka</h3>
-                            <p>Blaster podcast #1</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="podkestKartica">
-                    <img src="daVinci.jpg" alt="brko">
-                    <div>
-                        <div class="podkestKarticaPlejSlika"><span class="material-symbols-sharp">
-                            play_circle
-                            </span></div>
-                        <div class="podkestKarticaInfo">
-                            <h3>DaVinci session @ Vrucica, Banjaluka</h3>
-                            <p>Blaster podcast #1</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="podkestKartica">
-                    <img src="daVinci.jpg" alt="brko">
-                    <div>
-                        <div class="podkestKarticaPlejSlika"><span class="material-symbols-sharp">
-                            play_circle
-                            </span></div>
-                        <div class="podkestKarticaInfo">
-                            <h3>DaVinci session @ Vrucica, Banjaluka</h3>
-                            <p>Blaster podcast #1</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            </div>
+            <% } %>
+            <% } else {%>
+        </div>
+            <h1>Nema trenutno Podkesta</h1>    
+        <% } %>
     </section>
 
     <footer>

@@ -6,6 +6,8 @@ const multer = require("multer");
 
 const app = express();
 
+const errorController = require("./controllers/error");
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 
@@ -38,12 +40,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "assets")));
 
+app.use("/slike", express.static(path.join(__dirname, "slike")));
+
 const appRoutes = require("./routes/routes");
 const adminRoutes = require("./routes/admin");
 const sequelize = require("./utils/database");
 
 app.use(appRoutes);
 app.use("/admin", adminRoutes);
+app.use(errorController.get404);
 
 sequelize
   .sync()

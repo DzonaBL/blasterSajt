@@ -8,6 +8,7 @@ exports.postIzvodjac = (req, res, next) => {
   const ime = req.body.ime;
   const slika = req.file.path;
   const zanr = req.body.zanr;
+  const mjesto = req.body.mjesto;
   const biografija = req.body.biografija;
   const facebook = req.body.facebook;
   const instagram = req.body.instagram;
@@ -19,6 +20,7 @@ exports.postIzvodjac = (req, res, next) => {
     ime,
     slika,
     zanr,
+    mjesto,
     biografija,
     facebook,
     instagram,
@@ -28,7 +30,7 @@ exports.postIzvodjac = (req, res, next) => {
   })
     .then((result) => {
       console.log(result);
-      res.redirect("/");
+      res.redirect("/izvodjaci");
     })
     .catch((err) => {
       console.log(err);
@@ -46,7 +48,7 @@ exports.postDogadjaj = (req, res, next) => {
   Dogadjaj.create({ naslov, opis, slika, tekst, lokacija, vrijeme })
     .then((result) => {
       console.log(result);
-      res.redirect("/");
+      res.redirect("/dogadjaji");
     })
     .catch((err) => {
       console.log(err);
@@ -61,7 +63,7 @@ exports.postPodkest = (req, res, next) => {
   Podkest.create({ link, naslov, slika })
     .then((result) => {
       console.log(result);
-      res.redirect("/");
+      res.redirect("/podkesti");
     })
     .catch((err) => {
       console.log(err);
