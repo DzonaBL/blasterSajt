@@ -13,9 +13,6 @@ router.get("/izvodjaci", controller.getIzvodjaci);
 
 router.get("/podkesti", controller.getPodkesti);
 
-router.get("/saradnja", (req, res) => {
-  res.render("saradnja");
-});
 router.get("/o_nama", (req, res) => {
   res.render("onama");
 });

@@ -4,6 +4,16 @@ const Autor = require("../models/Autor");
 const Podkest = require("../models/Podkast");
 const Dogadjaj = require("../models/Dogadjaj");
 
+exports.postLogin = (req, res, next) => {
+  console.log(req.body.password);
+  if (req.body.password === "13tankanit69badzo19zolja420saraf123jumbas!") {
+    req.session.isLoggedIn = true;
+    res.redirect("/admin/upload");
+  } else {
+    res.redirect("/admin/login");
+  }
+};
+
 exports.postIzvodjac = (req, res, next) => {
   const ime = req.body.ime;
   const slika = req.file.path;
@@ -44,8 +54,17 @@ exports.postDogadjaj = (req, res, next) => {
   const tekst = req.body.tekst;
   const lokacija = req.body.lokacija;
   const vrijeme = req.body.vrijeme;
+  const vrijemeTekst = req.body.vrijemeTekst;
 
-  Dogadjaj.create({ naslov, opis, slika, tekst, lokacija, vrijeme })
+  Dogadjaj.create({
+    naslov,
+    opis,
+    slika,
+    tekst,
+    lokacija,
+    vrijeme,
+    vrijemeTekst,
+  })
     .then((result) => {
       console.log(result);
       res.redirect("/dogadjaji");

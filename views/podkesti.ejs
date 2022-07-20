@@ -10,8 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Podcasts</title>
-    </head>
+        <title><%= naslov %></title>
+        <link rel="icon" type="image/png" href="/blasterLogo/Blaster-Logo-Favicon.png">
+</head>
 <body>
     <header id="heder">
         <div class="ostatakHedera">
@@ -21,7 +22,7 @@
                 <a href="/izvodjaci">Извођачи</a>
                 <a href="/podkesti">Подкести</a>
                 <a href="/o_nama">О нама</a>
-                <a href="/saradnja">Сарађуј са нама!</a>
+        
         </div>
         <div class="navmenu">
             <input type="checkbox" name="hamburger" id="hamburger"></input>
@@ -35,7 +36,7 @@
                 <a href="/izvodjaci">Извођачи</a>
                 <a href="/podkesti">Подкести</a>
                 <a href="/o_nama">О нама</a>
-                <a href="/saradnja">Сарађуј са нама!</a>
+        
             </div>
         </div>
         </div>
@@ -63,9 +64,9 @@
             </a>
             <% } %>
             <% } else {%>
+                <h1>Nema trenutno Podkesta</h1> 
+            <% } %>
         </div>
-            <h1>Nema trenutno Podkesta</h1>    
-        <% } %>
     </section>
 
     <footer>
@@ -83,7 +84,7 @@
                 <a href="/izvodjaci">Извођачи</a>
                 <a href="/podkesti">Подкести</a>
                 <a href="/o_nama">О нама</a>
-                <a href="/saradnja">Сарађуј са нама!</a>
+        
         </div>
         <div>
             <h4>Контакт</h4>

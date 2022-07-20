@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home</title>
+    <title><%= naslov %></title>
+    <link rel="icon" type="image/png" href="/blasterLogo/Blaster-Logo-Favicon.png">
 </head>
 <body>
     <header id="heder">
@@ -20,7 +21,6 @@
             <a href="/izvodjaci">Извођачи</a>
             <a href="/podkesti">Подкести</a>
             <a href="/o_nama">О нама</a>
-            <a href="/saradnja">Сарађуј са нама!</a>
         </div>
         <div class="navmenu">
             <input type="checkbox" name="hamburger" id="hamburger"></input>
@@ -34,7 +34,7 @@
                 <a href="/izvodjaci">Извођачи</a>
                 <a href="/podkesti">Подкести</a>
                 <a href="/o_nama">О нама</a>
-                <a href="/saradnja">Сарађуј са нама!</a>
+        
             </div>
         </div>
         </div>
@@ -55,30 +55,33 @@
     </section>
     <section class="nadolazeciDogadjaji">
         <h2>Надолазеће журке</h2>
+
+
         <div class="zurkeKarticeKratke">
-            <a href="/stranicaZaDogadjaje" class="zurkaKarticaKratka">
-                    <img src="slikaSaArmature.jpg" alt="eventSlika">
-                    <div class="zurkaKarticaInfoKratka">
-                        <div>
-                            <p>15. Јул</p>
-                            <p>Тајна локација 🤫</p>
+           
+            <% if(data.length > 0){ %>
+                <% for(let d of data){ %> 
+
+                    <a href="/dogadjaji/<%= d.id %>" class="zurkaKarticaKratka">
+                        <img src="<%= d.slika %>" alt="eventSlika">
+                        <input type="hidden" value="<%= d.id %>" name="id">
+                        <input type="hidden" value="<%= d.vrijeme %>" name="vrijeme">
+                        <div class="zurkaKarticaInfoKratka">
+                            <div>
+                                <p><%= d.vrijemeTekst %></p>
+                                <p><%= d.lokacija %></p>
+                            </div>
+                            <h3><%= d.naslov %></h5>
+                            <p><%= d.opis %></p>
                         </div>
-                        <h3>АРМАТУРА: 160+ издање</h5>
-                        <p>На узбудљивој локацији уживаћемо у брзим тракама са нашим најбољим ДЈ-евима</p>
-                    </div>
-            </a>
-            <a href="/stranicaZaDogadjaje" class="zurkaKarticaKratka">
-                    <img src="slikaSaArmature.jpg" alt="eventSlika">
-                    <div class="zurkaKarticaInfoKratka">
-                        <div>
-                            <p>28. Август</p>
-                            <p>Фанки хаус</p>
-                        </div>
-                        <h3>D'n'B showcase</h5>
-                        <p>На старој неон локацији слушамо DnB издања стваралаца из наше резиденције</p>
-                    </div>
-            </a>
+                </a>
+            <% } %>
+            <% } else { %>
+                <h2>Nema buducih dogadjaja</h2>
+            <% } %>  
         </div>
+        
+
     </section>
     <section class="oNamaUkratko">
         <h2>БЛАСТЕР</h2>
@@ -99,7 +102,6 @@
             <a href="/izvodjaci">Извођачи</a>
             <a href="/podkesti">Подкести</a>
             <a href="/o_nama">О нама</a>
-            <a href="/saradnja">Сарађуј са нама!</a>
         </div>
         <div>
             <h4>Контакт</h4>

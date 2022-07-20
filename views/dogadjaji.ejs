@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
+    <title><%= naslov %></title>
+    <link rel="icon" type="image/png" href="/blasterLogo/Blaster-Logo-Favicon.png">
 </head>
 <body>
     <header id="heder">
@@ -20,7 +21,6 @@
             <a href="/izvodjaci">Извођачи</a>
             <a href="/podkesti">Подкести</a>
             <a href="/o_nama">О нама</a>
-            <a href="/saradnja">Сарађуј са нама!</a>
         </div>
         <div class="navmenu">
             <input type="checkbox" name="hamburger" id="hamburger"></input>
@@ -34,7 +34,7 @@
                 <a href="/izvodjaci">Извођачи</a>
                 <a href="/podkesti">Подкести</a>
                 <a href="/o_nama">О нама</a>
-                <a href="/saradnja">Сарађуј са нама!</a>
+        
             </div>
         </div>
         </div>
@@ -44,47 +44,48 @@
         <br><br><br><br>
         <h2>Сљедећи догађаји</h2>
         <div class="listanjeDogadjaja">
-        <% if(data.length > 0){ %>
-            <% for(let d of data){ %> 
-
+        <% if(buduciDogadjaji.length > 0){ %>
+            <% for(let d of buduciDogadjaji){ %> 
             <a href="/dogadjaji/<%= d.id %>" class="zurkaKarticaKratka">
         <img src="<%= d.slika %>" alt="eventSlika">
         <input type="hidden" value="<%= d.id %>" name="id">
+        <input type="hidden" value="<%= d.vrijeme %>" name="vrijeme">
         <div class="zurkaKarticaInfoKratka">
             <div>
-                <p><%= d.vrijeme %></p>
+                <p><%= d.vrijemeTekst %></p>
                 <p><%= d.lokacija %></p>
             </div>
             <h3><%= d.naslov %></h5>
             <p><%= d.opis %></p>
         </div>
-</a>
+        </a>
         <% } %>
-        <% }else{ %>
-            <h2>Nema buducih dogadjaja</h2>
-         <% } %>   
+        <% } else { %>
+        <h2>Nema buducih dogadjaja</h2>
+        <% } %>   
         </div>
+
         <h2>Прошли догађаји</h2>
         <div class="listanjeDogadjaja">
-            <% if(data.length > 0){ %>
-                <% for(let d of data){ %> 
-    
+            <% if(prosliDogadjaji.length > 0){ %>
+                <% for(let d of prosliDogadjaji){ %> 
                 <a href="/dogadjaji/<%= d.id %>" class="zurkaKarticaKratka">
             <img src="<%= d.slika %>" alt="eventSlika">
             <input type="hidden" value="<%= d.id %>" name="id">
+            <input type="hidden" value="<%= d.vrijeme %>" name="vrijeme">
             <div class="zurkaKarticaInfoKratka">
                 <div>
-                    <p><%= d.vrijeme %></p>
+                    <p><%= d.vrijemeTekst %></p>
                     <p><%= d.lokacija %></p>
                 </div>
                 <h3><%= d.naslov %></h5>
                 <p><%= d.opis %></p>
             </div>
-    </a>
+            </a>
             <% } %>
-            <% }else{ %>
+            <% } else { %>
                 <h2>Nema proslih dogadjaja</h2>
-             <% } %>   
+            <% } %>   
         </div>
     </section>
 
@@ -103,7 +104,6 @@
             <a href="/izvodjaci">Извођачи</a>
             <a href="/podkesti">Подкести</a>
             <a href="/o_nama">О нама</a>
-            <a href="/saradnja">Сарађуј са нама!</a>
         </div>
         <div>
             <h4>Контакт</h4>

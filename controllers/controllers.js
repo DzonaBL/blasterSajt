@@ -1,11 +1,28 @@
 const path = require("path");
 
+const { Op } = require("sequelize");
 const Autor = require("../models/Autor");
 const Podkest = require("../models/Podkast");
 const Dogadjaj = require("../models/Dogadjaj");
 
 exports.getIndex = (req, res, next) => {
-  res.render("index");
+  const trenutniDatum = new Date();
+  Dogadjaj.findAll({
+    where: { vrijeme: { [Op.gte]: trenutniDatum } },
+    order: [["vrijeme", "ASC"]],
+    limit: 2,
+  })
+    .then((dogadjaji) => {
+      console.log(dogadjaji);
+      res.render("index", {
+        data: dogadjaji,
+        naslov: "BLASTER",
+        path: "/",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 exports.getIzvodjaci = (req, res, next) => {
@@ -23,10 +40,25 @@ exports.getIzvodjaci = (req, res, next) => {
 };
 
 exports.getDogadjaji = (req, res, next) => {
+  const trenutniDatum = new Date();
   Dogadjaj.findAll()
-    .then((dogadjaji) => {
+    .then((result) => {
+      let buduci = [];
+      let prosli = [];
+      for (let d of result) {
+        const datum = new Date(d.vrijeme);
+        if (datum >= trenutniDatum) {
+          buduci.push(d);
+        } else {
+          prosli.push(d);
+        }
+      }
+      return [buduci, prosli];
+    })
+    .then((niz) => {
       res.render("dogadjaji", {
-        data: dogadjaji,
+        buduciDogadjaji: niz[0],
+        prosliDogadjaji: niz[1],
         naslov: "Dogadjaji",
         path: "/dogadjaji",
       });

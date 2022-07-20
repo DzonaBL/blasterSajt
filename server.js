@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const multer = require("multer");
+const session = require("express-session");
 
 const app = express();
 
@@ -39,6 +40,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "assets")));
+
+app.use(
+  session({
+    secret: "blaster admin",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.use("/slike", express.static(path.join(__dirname, "slike")));
 

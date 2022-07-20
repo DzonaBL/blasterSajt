@@ -30,6 +30,10 @@ const Dogadjaj = sequelize.define("dogadjaj", {
     allowNull: false,
   },
   vrijeme: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+  vrijemeTekst: {
     type: Sequelize.STRING,
     allowNull: false,
   },
