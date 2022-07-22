@@ -153,7 +153,7 @@ header {
 /*HOME PAGE*/
 
 .homePage {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('pozadinaONama.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../../assets/pozadinaONama.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -320,7 +320,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(slikaSaArmature.jpg);
+    background-image: url(https://drive.google.com/uc?export=view&id=1d_cjRykqUCnBOp_SIF4XX7dDpwqA1xnH);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
