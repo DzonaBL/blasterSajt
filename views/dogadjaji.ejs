@@ -15,12 +15,13 @@
 <body>
     <header id="heder">
         <div class="ostatakHedera">
-            <a href="/"><img src="../blasterLogo/Blaster-Logo-Favicon.png" alt="logo"></a>
+            <a href="/"><img src="/blasterLogo/Blaster-Logo-Favicon.png" alt="logo"></a>
         <div>
-            <a href="/dogadjaji">Догађаји</a>
-            <a href="/izvodjaci">Извођачи</a>
-            <a href="/podkesti">Подкести</a>
-            <a href="/o_nama">О нама</a>
+             <a href="/dogadjaji">Dogadjaji</a>
+                <a href="/izvodjaci">Izvodjači</a>
+                <a href="/podkesti">Podkesti</a>
+                <a href="/o_nama">O nama</a>
+        
         </div>
         <div class="navmenu">
             <input type="checkbox" name="hamburger" id="hamburger"></input>
@@ -30,10 +31,10 @@
                 <span></span>
             </label>
             <div class="hamburgerovMeni">
-                <a href="/dogadjaji">Догађаји</a>
-                <a href="/izvodjaci">Извођачи</a>
-                <a href="/podkesti">Подкести</a>
-                <a href="/o_nama">О нама</a>
+                <a href="/dogadjaji">Dogadjaji</a>
+                <a href="/izvodjaci">Izvodjači</a>
+                <a href="/podkesti">Podkesti</a>
+                <a href="/o_nama">O nama</a>
         
             </div>
         </div>
@@ -42,7 +43,7 @@
 
     <section class="sekcijaOdDogadjaja">
         <br><br><br><br>
-        <h2>Сљедећи догађаји</h2>
+        <h2>Sljedeći dogadjaji</h2>
         <div class="listanjeDogadjaja">
         <% if(buduciDogadjaji.length > 0){ %>
             <% for(let d of buduciDogadjaji){ %> 
@@ -60,12 +61,10 @@
         </div>
         </a>
         <% } %>
-        <% } else { %>
-        <h2>Nema buducih dogadjaja</h2>
         <% } %>   
         </div>
 
-        <h2>Прошли догађаји</h2>
+        <h2>Prošli dogadjaji</h2>
         <div class="listanjeDogadjaja">
             <% if(prosliDogadjaji.length > 0){ %>
                 <% for(let d of prosliDogadjaji){ %> 
@@ -83,31 +82,30 @@
             </div>
             </a>
             <% } %>
-            <% } else { %>
-                <h2>Nema proslih dogadjaja</h2>
             <% } %>   
         </div>
     </section>
 
     <footer>
         <div>
-            <h4>Пронађи нас на</h4>
-            <a href="#" class="futerDugme">Инстаграм</a>
-            <a href="#" class="futerDugme">Фејсбук</a>
-            <a href="#" class="futerDugme">Јутјуб</a>
-            <a href="#" class="futerDugme">Саундклауд</a>
-            <a href="#" class="futerDugme">Бендкемп</a>
+            <h4>Pronadji nas na</h4>
+            <a href="https://www.instagram.com/blaster.banjaluka/" class="futerDugme">Instagram</a>
+            <a href="https://www.facebook.com/blaster.banjaluka" class="futerDugme">Facebook</a>
+            <a href="https://www.youtube.com/channel/UCZbjLoLJdBRFL7th-2bBNMA" class="futerDugme">Youtube</a>
+            <a href="https://soundcloud.com/blaster-979775745" class="futerDugme">Soundcloud</a>
+            <a href="https://blaster-bl.bandcamp.com/" class="futerDugme">Bandcamp</a>
         </div>
         <div>
-            <h4>Мени</h4>
-            <a href="/dogadjaji">Догађаји</a>
-            <a href="/izvodjaci">Извођачи</a>
-            <a href="/podkesti">Подкести</a>
-            <a href="/o_nama">О нама</a>
+            <h4>Meni</h4>
+             <a href="/dogadjaji">Dogadjaji</a>
+                <a href="/izvodjaci">Izvodjači</a>
+                <a href="/podkesti">Podkesti</a>
+                <a href="/o_nama">O nama</a>
+        
         </div>
         <div>
-            <h4>Контакт</h4>
-            <a href="" class="futerDugme">И-мејл</a>
+            <h4>Kontakt</h4>
+            <a href="mailto:blaster.kontakt@gmail.com" class="futerDugme">Email</a>
         </div>
     </footer>
 </body>
