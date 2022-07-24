@@ -13,7 +13,6 @@ exports.getIndex = (req, res, next) => {
     limit: 2,
   })
     .then((dogadjaji) => {
-      console.log(dogadjaji);
       res.render("index", {
         data: dogadjaji,
         naslov: "BLASTER",

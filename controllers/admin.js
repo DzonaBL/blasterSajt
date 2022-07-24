@@ -39,7 +39,6 @@ exports.postIzvodjac = (req, res, next) => {
     youtube,
   })
     .then((result) => {
-      console.log(result);
       res.redirect("/izvodjaci");
     })
     .catch((err) => {
@@ -66,7 +65,6 @@ exports.postDogadjaj = (req, res, next) => {
     vrijemeTekst,
   })
     .then((result) => {
-      console.log(result);
       res.redirect("/dogadjaji");
     })
     .catch((err) => {
@@ -81,7 +79,6 @@ exports.postPodkest = (req, res, next) => {
 
   Podkest.create({ link, naslov, slika })
     .then((result) => {
-      console.log(result);
       res.redirect("/podkesti");
     })
     .catch((err) => {
