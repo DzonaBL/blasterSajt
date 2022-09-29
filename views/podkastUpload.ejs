@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,600;0,700;0,900;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,300,0,0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload</title>
+      <link rel="icon" type="image/png" href="/blasterLogo/Blaster-Logo-Favicon.png">
+</head>
+  <body>
+    <header id="heder">
+      <div class="ostatakHedera">
+        <a href="/"
+          ><img src="/blasterLogo/Blaster-Logo-Favicon.png" alt="logo"
+        /></a>
+        <div>
+          <a href="/dogadjaji">Догађаји</a>
+          <a href="/izvodjaci">Извођачи</a>
+          <a href="/podkesti">Подкести</a>
+          <a href="/o_nama">О нама</a>
+          <a href="/saradnja">Сарађуј са нама!</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="aploudSekcija">
+      
+      <h2>Podcasts</h2>
+      <form action="/admin/<% if(edit){ %>podkast-update/<%= data.id %><% }else{ %>podkest<% } %>" method="POST" enctype='multipart/form-data'>
+        <label for="naslov">Име подкеста</label>
+        <input type="text" name="naslov" id="naslov" value="<% if(edit){ %><%= data.naslov %><% } %>"/>
+
+        <label for="link">Линк подкеста</label>
+        <input type="text" name="link" id="link" value="<% if(edit){ %><%= data.link %><% } %>"/>
+
+        <label for="slika">Слика подкеста</label>
+        <input type="file" name="slika" id="slika" value="<% if(edit){ %><%= data.slika %><% } %>"/>
+
+        <br />
+        <button type="submit"><% if(edit) {%>  Zamjeni  <% }else{%>  Постави  <% } %></button>
+      </form>
+    </section>
+
+    <footer>
+      <div>
+        <h4>Пронађи нас на</h4>
+        <a href="#" class="futerDugme">Инстаграм</a>
+        <a href="#" class="futerDugme">Фејсбук</a>
+        <a href="#" class="futerDugme">Јутјуб</a>
+        <a href="#" class="futerDugme">Саундклауд</a>
+        <a href="#" class="futerDugme">Бендкемп</a>
+      </div>
+      <div>
+        <h4>Мени</h4>
+        <a href="/dogadjaji">Догађаји</a>
+        <a href="/izvodjaci">Извођачи</a>
+        <a href="/podkesti">Подкести</a>
+        <a href="/o_nama">О нама</a>
+        <a href="/saradnja">Сарађуј са нама!</a>
+      </div>
+      <div>
+        <h4>Контакт</h4>
+        <a href="" class="futerDugme">И-мејл</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="/js/zatamniSkrolom.js"></script>
